@@ -13,7 +13,7 @@ export default function ResultScreen () {
   const navigation = useNavigation<NavigationProp>();
   const route = useRoute<RouteProps>();
 
-  const { name, gender, skinType } = route.params;
+  const { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType, skinFeel, dryExp, skinProd, allergies, skinGoals, skinPref, pricePref, ingrPref, actIngrPref } = route.params;
   const onComplete = () => {
     navigation.navigate('Welcome');
   };

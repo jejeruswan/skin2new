@@ -7,31 +7,31 @@ import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/navigation';
 
-type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'SkinType'>;
-type RouteProps = RouteProp<RootStackParamList, 'SkinType'>;
+type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'IngrPref'>;
+type RouteProps = RouteProp<RootStackParamList, 'IngrPref'>;
 
-export default function SkinTypeScreen () {
+export default function IngrPrefScreen () {
   const navigation = useNavigation<NavigationProp>();
   const route = useRoute<RouteProps>();
-  const [selectedSkinType, setSelectedSkinType] = useState<string | null>(null);
+  const [selectedIngrPref, setSelectedIngrPref] = useState<string | null>(null);
 
-  const { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin } = route.params;
-  const skinTypeOptions = ["Dry/Tight", "Oily", "Dry/Oily in some parts", "Sensitive/Irritable", "Clear/Smooth"];
+  const { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType, skinFeel, dryExp, skinProd, allergies, skinGoals, skinPref, pricePref } = route.params;
+  const ingrPrefOptions = ["Hyaluronic acid (Hydration)", "Niacinamide (Brightening, oil control)", "Retinol (anti-ageing)", "Vitamin C (Brightening, antioxidant)", "Peptides (Skin barrier repair)", "None"];
   
-  const handleSelect = (skinType: string) => {
-    setSelectedSkinType(selectedSkinType);
+  const handleSelect = (ingrPref: string) => {
+    setSelectedIngrPref(selectedIngrPref);
     // Navigate to results screen with all parameters
-    navigation.navigate('SkinFeel', { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType });
+    navigation.navigate('ActIngrPref', { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType, skinFeel, dryExp, skinProd, allergies, skinGoals, skinPref, pricePref, ingrPref });
   };
 
   return (
     <View style={styles.container}>
       <QuestionHeader
-        questionNumber="QUESTION 7"
-        question="What is your skin type?"
+        questionNumber="QUESTION 15"
+        question="Do you have any specific skincare ingredients you love and look for in products?"
       />
       <View style={styles.optionsContainer}>
-        {skinTypeOptions.map((option) => (
+        {ingrPrefOptions.map((option) => (
           <OptionButton
             key={option}
             label={option}

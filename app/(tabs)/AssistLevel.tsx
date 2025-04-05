@@ -7,31 +7,31 @@ import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/navigation';
 
-type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'SkinType'>;
-type RouteProps = RouteProp<RootStackParamList, 'SkinType'>;
+type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'AssistLevel'>;
+type RouteProps = RouteProp<RootStackParamList, 'AssistLevel'>;
 
-export default function SkinTypeScreen () {
+export default function AssistScreen () {
   const navigation = useNavigation<NavigationProp>();
   const route = useRoute<RouteProps>();
-  const [selectedSkinType, setSelectedSkinType] = useState<string | null>(null);
+  const [selectedAssist, setSelectedAssist] = useState<string | null>(null);
 
-  const { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin } = route.params;
-  const skinTypeOptions = ["Dry/Tight", "Oily", "Dry/Oily in some parts", "Sensitive/Irritable", "Clear/Smooth"];
+  const { name, gender, xpLevel } = route.params;
+  const assistOptions = ["Check product ingredients", "Track routine", "Recommend products", "Compare products", "Scan skin"];
   
-  const handleSelect = (skinType: string) => {
-    setSelectedSkinType(selectedSkinType);
+  const handleSelect = (assistLevel: string) => {
+    setSelectedAssist(selectedAssist);
     // Navigate to results screen with all parameters
-    navigation.navigate('SkinFeel', { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType });
+    navigation.navigate('SkinConcerns', { name, gender, xpLevel, assistLevel });
   };
 
   return (
     <View style={styles.container}>
       <QuestionHeader
-        questionNumber="QUESTION 7"
-        question="What is your skin type?"
+        questionNumber="QUESTION 4"
+        question="What can our team help you with?"
       />
       <View style={styles.optionsContainer}>
-        {skinTypeOptions.map((option) => (
+        {assistOptions.map((option) => (
           <OptionButton
             key={option}
             label={option}

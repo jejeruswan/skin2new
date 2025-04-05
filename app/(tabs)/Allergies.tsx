@@ -7,31 +7,33 @@ import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/navigation';
 
-type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'SkinType'>;
-type RouteProps = RouteProp<RootStackParamList, 'SkinType'>;
+type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Allergies'>;
+type RouteProps = RouteProp<RootStackParamList, 'Allergies'>;
 
-export default function SkinTypeScreen () {
+export default function AllergiesScreen () {
   const navigation = useNavigation<NavigationProp>();
   const route = useRoute<RouteProps>();
-  const [selectedSkinType, setSelectedSkinType] = useState<string | null>(null);
+  const [selectedAllergies, setSelectedAllergies] = useState<string | null>(null);
 
-  const { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin } = route.params;
-  const skinTypeOptions = ["Dry/Tight", "Oily", "Dry/Oily in some parts", "Sensitive/Irritable", "Clear/Smooth"];
+  const { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType, skinFeel, dryExp, skinProd } = route.params;
+  const allergyOptions = ["Fragrances", "Alcohols", "Parabens", "Dyes", "Sulfates", "Essential oils", "None"];
   
-  const handleSelect = (skinType: string) => {
-    setSelectedSkinType(selectedSkinType);
+  const handleSelect = (allergies: string) => {
+    setSelectedAllergies(selectedAllergies);
     // Navigate to results screen with all parameters
-    navigation.navigate('SkinFeel', { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType });
+    navigation.navigate('SkinGoals', { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType, skinFeel, dryExp, skinProd, 
+        allergies 
+    });
   };
 
   return (
     <View style={styles.container}>
       <QuestionHeader
-        questionNumber="QUESTION 7"
-        question="What is your skin type?"
+        questionNumber="QUESTION 10"
+        question="Do you have any ingredient sensitivities or allergies?"
       />
       <View style={styles.optionsContainer}>
-        {skinTypeOptions.map((option) => (
+        {allergyOptions.map((option) => (
           <OptionButton
             key={option}
             label={option}

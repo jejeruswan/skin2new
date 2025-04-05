@@ -7,31 +7,31 @@ import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/navigation';
 
-type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'SkinType'>;
-type RouteProps = RouteProp<RootStackParamList, 'SkinType'>;
+type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'PricePref'>;
+type RouteProps = RouteProp<RootStackParamList, 'PricePref'>;
 
-export default function SkinTypeScreen () {
+export default function PricePrefScreen () {
   const navigation = useNavigation<NavigationProp>();
   const route = useRoute<RouteProps>();
-  const [selectedSkinType, setSelectedSkinType] = useState<string | null>(null);
+  const [selectedPricePref, setSelectedPricePref] = useState<string | null>(null);
 
-  const { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin } = route.params;
-  const skinTypeOptions = ["Dry/Tight", "Oily", "Dry/Oily in some parts", "Sensitive/Irritable", "Clear/Smooth"];
+  const { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType, skinFeel, dryExp, skinProd, allergies, skinGoals, skinPref } = route.params;
+  const pricePrefOptions = ["Budget-friendly", "Mid-range", "High-end; I'm fancy like that!"];
   
-  const handleSelect = (skinType: string) => {
-    setSelectedSkinType(selectedSkinType);
+  const handleSelect = (pricePref: string) => {
+    setSelectedPricePref(selectedPricePref);
     // Navigate to results screen with all parameters
-    navigation.navigate('SkinFeel', { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType });
+    navigation.navigate('IngrPref', { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType, skinFeel, dryExp, skinProd, allergies, skinGoals, skinPref, pricePref });
   };
 
   return (
     <View style={styles.container}>
       <QuestionHeader
-        questionNumber="QUESTION 7"
-        question="What is your skin type?"
+        questionNumber="QUESTION 14"
+        question="What is your preferred price range for skincare products?"
       />
       <View style={styles.optionsContainer}>
-        {skinTypeOptions.map((option) => (
+        {pricePrefOptions.map((option) => (
           <OptionButton
             key={option}
             label={option}
