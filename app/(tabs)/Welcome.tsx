@@ -5,7 +5,8 @@ import { colors, typography, spacing, layout } from "@/constants/Theme";
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/navigation';
-import { Colors } from "@/constants/Colors";
+import { Colors } from '@/constants/Colors';
+
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Welcome'>;
 
