@@ -33,7 +33,6 @@ export default function NameInputScreen () {
         placeholderTextColor={colors.text}
         selectionColor={colors.text}
       />
-      <View style={styles.line} />
       <View style={styles.buttonContainer}>
         <OptionButton
           label="→"
@@ -47,6 +46,7 @@ export default function NameInputScreen () {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingHorizontal: layout.padding,
     width: "100%",
     maxWidth: layout.maxWidth,
@@ -54,13 +54,10 @@ const styles = StyleSheet.create({
   input: {
     color: colors.text,
     fontSize: 24,
-    marginBottom: spacing.medium,
-  },
-  line: {
-    width: "100%",
-    height: 2,
-    backgroundColor: colors.text,
-    marginTop: 200,
+    borderBottomWidth: 2,
+    borderBottomColor: colors.text,
+    marginBottom: spacing.small,
+    marginTop: spacing.large,
   },
   buttonContainer: {
     alignItems: "flex-end",
