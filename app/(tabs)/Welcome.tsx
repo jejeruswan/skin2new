@@ -1,18 +1,20 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, useColorScheme } from "react-native";
 import { OptionButton } from "@/components/OptionButton";
 import { colors, typography, spacing, layout } from "@/constants/Theme";
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '@/types/types';
+import { RootStackParamList } from '@/types/navigation';
+import { Colors } from '@/constants/Colors';
+
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Welcome'>;
 
 export default function WelcomeScreen () {
   const navigation = useNavigation<NavigationProp>();
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>
+  <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
+  <Text style={styles.title}>
         Welcome to Skin2Care! Ready to start your clear skin arc?
       </Text>
       <View style={styles.buttonContainer}>
