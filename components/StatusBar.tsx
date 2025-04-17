@@ -8,11 +8,6 @@ export const StatusBar = () => {
       <View style={styles.timeContainer}>
         <Text style={styles.timeText}>9:41</Text>
       </View>
-      <View style={styles.iconContainer}>
-        <View style={styles.icon} />
-        <View style={styles.icon} />
-        <View style={styles.batteryIcon} />
-      </View>
     </View>
   );
 };

@@ -5,33 +5,33 @@ import { OptionButton } from "@/components/OptionButton";
 import { colors, typography, spacing, layout } from "@/constants/Theme";
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '@/types/types';
+import { RootStackParamList } from '@/types/navigation';
 
-type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'SkinType'>;
-type RouteProps = RouteProp<RootStackParamList, 'SkinType'>;
+type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'SkinFeel'>;
+type RouteProps = RouteProp<RootStackParamList, 'SkinFeel'>;
 
-export default function SkinTypeScreen () {
+export default function SkinFeelScreen () {
   const navigation = useNavigation<NavigationProp>();
   const route = useRoute<RouteProps>();
-  const [selectedSkinType, setSelectedSkinType] = useState<string | null>(null);
+  const [selectedSkinFeel, setSelectedSkinFeel] = useState<string | null>(null);
 
-  const { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin } = route.params;
-  const skinTypeOptions = ["Dry/Tight", "Oily", "Dry/Oily in some parts", "Sensitive/Irritable", "Clear/Smooth"];
+  const { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType } = route.params;
+  const skinFeelOptions = ["Dry/Tight", "Oily", "Dry/Oily in some parts", "Sensitive/Irritable", "Clear/Smooth"];
   
-  const handleSelect = (skinType: string) => {
-    setSelectedSkinType(selectedSkinType);
+  const handleSelect = (skinFeel: string) => {
+    setSelectedSkinFeel(skinFeel);
     // Navigate to results screen with all parameters
-    navigation.navigate('SkinFeel', { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType });
+    navigation.navigate('DryExp', { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType, skinFeel });
   };
 
   return (
     <View style={styles.container}>
       <QuestionHeader
-        questionNumber="QUESTION 7"
-        question="What is your skin type?"
+        questionNumber="QUESTION 8"
+        question="How does your skin feel 30 minutes after you shower? (No products)"
       />
       <View style={styles.optionsContainer}>
-        {skinTypeOptions.map((option) => (
+        {skinFeelOptions.map((option) => (
           <OptionButton
             key={option}
             label={option}
