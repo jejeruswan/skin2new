@@ -5,7 +5,7 @@ export type RootStackParamList = {
   NameInput: undefined;
   Gender: { name: string };
   XpLevel: { name: string; gender: string };
-  AssistLevel: { name: string; gender: string; xpLevel: string };
+  AssistLevel: { name: string; gender: string; xpLevel: string};
   SkinConcerns: { name: string; gender: string; xpLevel: string; assistLevel: string };
   KnowSkin: { name: string; gender: string; xpLevel: string; assistLevel: string; skinConcerns: string };
   SkinType: { name: string; gender: string; xpLevel: string; assistLevel: string; 

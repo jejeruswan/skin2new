@@ -11,10 +11,10 @@ type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'SkinType'>;
 type SkinTypeScreenRouteParams = {
   name: string;
   gender: string;
-  xpLevel: number;
-  assistLevel: number;
-  skinConcerns: string[];
-  knowSkin: boolean;
+  xpLevel: string;
+  assistLevel: string;
+  skinConcerns: string;
+  knowSkin: string;
 };
 
 type RouteProps = RouteProp<{ params: SkinTypeScreenRouteParams }, 'params'>;
