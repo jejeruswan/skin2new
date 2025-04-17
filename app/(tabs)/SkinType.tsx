@@ -8,7 +8,16 @@ import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/types';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'SkinType'>;
-type RouteProps = RouteProp<RootStackParamList, 'SkinType'>;
+type SkinTypeScreenRouteParams = {
+  name: string;
+  gender: string;
+  xpLevel: number;
+  assistLevel: number;
+  skinConcerns: string[];
+  knowSkin: boolean;
+};
+
+type RouteProps = RouteProp<{ params: SkinTypeScreenRouteParams }, 'params'>;
 
 export default function SkinTypeScreen () {
   const navigation = useNavigation<NavigationProp>();
