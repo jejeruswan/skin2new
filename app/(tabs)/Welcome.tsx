@@ -30,6 +30,7 @@ export default function WelcomeScreen () {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingHorizontal: layout.padding,
     alignItems: "center",
     width: "100%",
