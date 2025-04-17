@@ -6,6 +6,7 @@ import { colors, spacing, layout } from "@/constants/Theme";
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/types';
+import { Colors } from '@/constants/Colors';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Welcome'>;
 
@@ -20,8 +21,7 @@ export default function NameInputScreen () {
   };
 
   return (
-    <View style={styles.container}>
-      <QuestionHeader
+<View style={[styles.container, { backgroundColor: Colors['light'].background }]}>      <QuestionHeader
         questionNumber="QUESTION 1"
         question="What is your name?"
       />
