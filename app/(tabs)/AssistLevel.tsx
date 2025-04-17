@@ -5,7 +5,7 @@ import { OptionButton } from "@/components/OptionButton";
 import { colors, typography, spacing, layout } from "@/constants/Theme";
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '@/types/navigation';
+import { RootStackParamList } from '@/types/types';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'AssistLevel'>;
 type RouteProps = RouteProp<RootStackParamList, 'AssistLevel'>;
