@@ -6,6 +6,8 @@ import { colors, typography, spacing, layout } from "@/constants/Theme";
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/types';
+import { Colors } from '@/constants/Colors';
+
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Gender'>;
 type RouteProps = RouteProp<RootStackParamList, 'Gender'>;
@@ -25,7 +27,7 @@ export default function GenderScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <QuestionHeader
         questionNumber="QUESTION 2"
         question="What gender do you identify as?"
@@ -45,6 +47,7 @@ export default function GenderScreen () {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingHorizontal: layout.padding,
     width: "100%",
     maxWidth: layout.maxWidth,
