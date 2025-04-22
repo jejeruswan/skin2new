@@ -13,36 +13,32 @@ type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Welcome'>;
 export default function NameInputScreen () {
   const navigation = useNavigation<NavigationProp>();
   const [name, setName] = useState("");
-  const handleNext = () => {
-    // Only navigate if name is not empty
-    if (name.trim()) {
-      navigation.navigate('Gender', { name });
-    }
-  };
 
   return (
-<View style={[styles.container, { backgroundColor: Colors['light'].background }]}>      <QuestionHeader
-        questionNumber="QUESTION 1"
-        question="What is your name?"
-      />
-      <TextInput
-        style={styles.input}
-        value={name}
-        onChangeText={setName}
-        placeholder="Enter your name"
-        placeholderTextColor={colors.text}
-        selectionColor={colors.text}
-      />
-      <View style={styles.buttonContainer}>
-        <OptionButton
-          label="→"
-          onPress={handleNext}
-          style={styles.button}
+  <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>      
+    <QuestionHeader
+          questionNumber="QUESTION 1"
+          question="What is your name?"
         />
+        <TextInput
+          style={styles.input}
+          value={name}
+          onChangeText={setName}
+          placeholder="Enter your name"
+          placeholderTextColor={colors.text}
+          selectionColor={colors.text}
+        />
+        <View style={styles.buttonContainer}>
+          <OptionButton
+            label="→"
+            onPress={() => navigation.navigate('Gender', { name })
+            }
+            style={styles.button}
+          />
+        </View>
       </View>
-    </View>
-  );
-};
+    );
+  };
 
 const styles = StyleSheet.create({
   container: {
