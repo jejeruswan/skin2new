@@ -26,7 +26,7 @@ export default function SkinGoalsScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <QuestionHeader
         questionNumber="QUESTION 12"
         question="What are your main goals with your skincare routine?"

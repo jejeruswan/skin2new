@@ -26,7 +26,7 @@ export default function SkinProdScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <QuestionHeader
         questionNumber="QUESTION 9"
         question="What skincare products do you currently use?"

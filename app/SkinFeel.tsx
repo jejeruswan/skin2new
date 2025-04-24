@@ -26,7 +26,7 @@ export default function SkinFeelScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <QuestionHeader
         questionNumber="QUESTION 8"
         question="How does your skin feel 30 minutes after you shower? (No products)"

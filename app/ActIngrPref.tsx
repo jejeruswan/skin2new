@@ -26,7 +26,7 @@ export default function ActIngrPrefScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <QuestionHeader
         questionNumber="QUESTION 16"
         question="Do you prefer products with or without active ingredients (ie. retinol, AHAs, BHAs, niacinamide)?"
@@ -46,9 +46,6 @@ export default function ActIngrPrefScreen () {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: Colors['light'].background,
-    justifyContent: "center",
     paddingHorizontal: layout.padding,
     width: "100%",
     maxWidth: layout.maxWidth,

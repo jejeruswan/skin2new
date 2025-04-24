@@ -26,7 +26,7 @@ export default function AssistScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <QuestionHeader
         questionNumber="QUESTION 4"
         question="What can our team help you with?"

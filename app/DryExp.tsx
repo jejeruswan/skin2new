@@ -26,7 +26,7 @@ export default function DryScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <QuestionHeader
         questionNumber="QUESTION 9"
         question="How often do you experience dry, flaky skin?"

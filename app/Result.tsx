@@ -20,7 +20,7 @@ export default function ResultScreen () {
   };
   
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <Text style={styles.message}>
         {name}, welcome to your clear skin era. Tap to view the routine we've
         prepared for you.

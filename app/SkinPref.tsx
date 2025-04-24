@@ -26,7 +26,7 @@ export default function SkinPrefScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <QuestionHeader
         questionNumber="QUESTION 13"
         question="Do you have any skincare preferences?"

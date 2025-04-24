@@ -26,7 +26,7 @@ export default function IngrPrefScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <QuestionHeader
         questionNumber="QUESTION 15"
         question="Do you have any specific skincare ingredients you love and look for in products?"

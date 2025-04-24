@@ -28,7 +28,7 @@ export default function AllergiesScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <QuestionHeader
         questionNumber="QUESTION 10"
         question="Do you have any ingredient sensitivities or allergies?"

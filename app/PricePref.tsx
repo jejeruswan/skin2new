@@ -26,7 +26,7 @@ export default function PricePrefScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <QuestionHeader
         questionNumber="QUESTION 14"
         question="What is your preferred price range for skincare products?"
