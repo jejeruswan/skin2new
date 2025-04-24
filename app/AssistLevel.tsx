@@ -6,6 +6,7 @@ import { colors, typography, spacing, layout } from "@/constants/Theme";
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/types';
+import { Colors } from '@/constants/Colors';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'AssistLevel'>;
 type RouteProps = RouteProp<RootStackParamList, 'AssistLevel'>;
@@ -25,7 +26,7 @@ export default function AssistScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <QuestionHeader
         questionNumber="QUESTION 4"
         question="What can our team help you with?"
@@ -45,6 +46,7 @@ export default function AssistScreen () {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingHorizontal: layout.padding,
     width: "100%",
     maxWidth: layout.maxWidth,

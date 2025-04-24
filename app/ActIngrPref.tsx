@@ -6,6 +6,7 @@ import { colors, typography, spacing, layout } from "@/constants/Theme";
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/types';
+import { Colors } from '@/constants/Colors';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'ActIngrPref'>;
 type RouteProps = RouteProp<RootStackParamList, 'ActIngrPref'>;
@@ -25,7 +26,7 @@ export default function ActIngrPrefScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <QuestionHeader
         questionNumber="QUESTION 16"
         question="Do you prefer products with or without active ingredients (ie. retinol, AHAs, BHAs, niacinamide)?"
@@ -45,6 +46,7 @@ export default function ActIngrPrefScreen () {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingHorizontal: layout.padding,
     width: "100%",
     maxWidth: layout.maxWidth,
