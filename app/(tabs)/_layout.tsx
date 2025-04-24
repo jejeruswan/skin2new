@@ -1,12 +1,12 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform, View } from 'react-native';
-
 import { HapticTab } from '@/components/HapticTab';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -62,13 +62,7 @@ export default function TabLayout() {
         name="Routine" 
         options={{
           title: 'Routine',
-          tabBarIcon: ({ focused }) => (
-            <CustomIcon 
-              name="search-icon.svg" 
-              size={28} 
-              color={focused ? activeColor : inactiveColor} 
-            />
-          ),
+          tabBarIcon: ({ color }) => <Ionicons name="sparkles-outline" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
