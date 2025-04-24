@@ -58,6 +58,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.fill" color={color} />,
         }}
       />
+<<<<<<< HEAD
       <Tabs.Screen 
         name="Routine" 
         options={{
@@ -71,6 +72,8 @@ export default function TabLayout() {
           ),
         }}q
       />
+=======
+>>>>>>> e7ad0354e95b8816149b50cda449ac43fb65508e
       <Tabs.Screen
         name="index"
         options={{

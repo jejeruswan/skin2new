@@ -6,6 +6,7 @@ import { colors, typography, spacing, layout } from "@/constants/Theme";
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/types';
+import { Colors } from '@/constants/Colors'
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'KnowSkin'>;
 type RouteProps = RouteProp<RootStackParamList, 'KnowSkin'>;
@@ -25,7 +26,7 @@ export default function KnowSkinScreen () {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <QuestionHeader
         questionNumber="QUESTION 6"
         question="Do you know your skin type?"
@@ -45,6 +46,9 @@ export default function KnowSkinScreen () {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: Colors['light'].background,
+    justifyContent: "center",
     paddingHorizontal: layout.padding,
     width: "100%",
     maxWidth: layout.maxWidth,
