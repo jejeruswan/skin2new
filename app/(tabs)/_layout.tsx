@@ -69,7 +69,7 @@ export default function TabLayout() {
               color={focused ? activeColor : inactiveColor} 
             />
           ),
-        }}
+        }}q
       />
       <Tabs.Screen
         name="index"
