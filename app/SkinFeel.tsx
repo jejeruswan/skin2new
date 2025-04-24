@@ -6,6 +6,7 @@ import { colors, typography, spacing, layout } from "@/constants/Theme";
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/types';
+import { Colors } from '@/constants/Colors'
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'SkinFeel'>;
 type RouteProps = RouteProp<RootStackParamList, 'SkinFeel'>;
@@ -45,6 +46,9 @@ export default function SkinFeelScreen () {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: Colors['light'].background,
+    justifyContent: "center",
     paddingHorizontal: layout.padding,
     width: "100%",
     maxWidth: layout.maxWidth,

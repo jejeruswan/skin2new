@@ -47,6 +47,8 @@ export default function ConcernScreen () {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: Colors['light'].background,
+    justifyContent: "center",
     paddingHorizontal: layout.padding,
     width: "100%",
     maxWidth: layout.maxWidth,
