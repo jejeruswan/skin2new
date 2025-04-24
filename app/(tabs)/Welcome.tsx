@@ -14,7 +14,7 @@ export default function WelcomeScreen () {
   const navigation = useNavigation<NavigationProp>();
   return (
   <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
-  <Text style={styles.title}>
+    <Text style={styles.title}>
         Welcome to Skin2Care! Ready to start your clear skin arc?
       </Text>
       <View style={styles.buttonContainer}>
@@ -31,8 +31,8 @@ export default function WelcomeScreen () {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: "center",
     paddingHorizontal: layout.padding,
-    alignItems: "center",
     width: "100%",
     maxWidth: layout.maxWidth,
   },

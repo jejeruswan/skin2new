@@ -48,6 +48,7 @@ export default function GenderScreen () {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: "center",
     paddingHorizontal: layout.padding,
     width: "100%",
     maxWidth: layout.maxWidth,

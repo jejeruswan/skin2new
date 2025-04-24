@@ -38,10 +38,12 @@ export default function ResultScreen () {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingHorizontal: layout.padding,
-    width: "100%",
-    maxWidth: layout.maxWidth,
+      flex: 1,
+      backgroundColor: Colors['light'].background,
+      justifyContent: "center",
+      paddingHorizontal: layout.padding,
+      width: "100%",
+      maxWidth: layout.maxWidth,
   },
   message: {
     fontSize: 40,

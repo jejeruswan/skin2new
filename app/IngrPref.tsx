@@ -6,7 +6,7 @@ import { colors, typography, spacing, layout } from "@/constants/Theme";
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/types';
-import { Colors } from '@/constants/Colors';
+import { Colors } from '@/constants/Colors'
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'IngrPref'>;
 type RouteProps = RouteProp<RootStackParamList, 'IngrPref'>;
@@ -17,7 +17,7 @@ export default function IngrPrefScreen () {
   const [selectedIngrPref, setSelectedIngrPref] = useState<string | null>(null);
 
   const { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType, skinFeel, dryExp, skinProd, allergies, skinGoals, skinPref, pricePref } = route.params;
-  const ingrPrefOptions = ["Hyaluronic acid (Hydration)", "Niacinamide (Brightening, oil control)", "Retinol (anti-ageing)", "Vitamin C (Brightening, antioxidant)", "Peptides (Skin barrier repair)", "None"];
+  const ingrPrefOptions = ["Hydration", "Brightening/oil control", "Anti-ageing", "Antioxidant", "Skin barrier repair", "None"];
   
   const handleSelect = (ingrPref: string) => {
     setSelectedIngrPref(selectedIngrPref);
@@ -47,6 +47,8 @@ export default function IngrPrefScreen () {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: Colors['light'].background,
+    justifyContent: "center",
     paddingHorizontal: layout.padding,
     width: "100%",
     maxWidth: layout.maxWidth,
