@@ -5,7 +5,8 @@ import { colors, typography, spacing, layout } from "@/constants/Theme";
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/types';
-import { Colors } from '@/constants/Colors'
+import { Colors } from '@/constants/Colors';
+import { useRouter } from 'expo-router';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Result'>;
 type RouteProps = RouteProp<RootStackParamList, 'Result'>;
@@ -15,8 +16,9 @@ export default function ResultScreen () {
   const route = useRoute<RouteProps>();
 
   const { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType, skinFeel, dryExp, skinProd, allergies, skinGoals, skinPref, pricePref, ingrPref, actIngrPref } = route.params;
+  const router = useRouter();
   const onComplete = () => {
-    navigation.navigate('Welcome');
+    router.push('/(tabs)/Routine');
   };
   
   return (
