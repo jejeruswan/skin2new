@@ -1,3 +1,5 @@
+import {StyleSheet} from "react-native";
+
 export const colors = {
     primary: "#8E9DCC",
     secondary: "#6B7698",
@@ -5,6 +7,9 @@ export const colors = {
     text: "#FFF8E6",
     buttonBg: "#EFF0FF",
     buttonText: "#6B7698",
+    white: "#FFFFFF",
+    textPrimary: "rgba(107, 118, 152, 1)",
+    textSecondary: "rgba(142, 157, 204, 1)",
   };
   
   export const typography = {
@@ -18,6 +23,7 @@ export const colors = {
     },
     subheading: {
       fontSize: 14,
+      fontFamily: "Poppins",
       fontWeight: "500" as const,
       letterSpacing: 1,
       color: colors.text,
@@ -30,6 +36,11 @@ export const colors = {
     },
   };
   
+  export const typography1 = {
+    sfProText: "SF Pro Text",
+    poppins: "Poppins",
+  };
+
   export const spacing = {
     small: 8,
     medium: 16,
@@ -42,3 +53,21 @@ export const colors = {
     maxWidth: 390,
     padding: 20,
   };
+  
+  export const commonStyles = StyleSheet.create({
+    container: {
+      borderRadius: 50,
+      marginLeft: "auto",
+      marginRight: "auto",
+      maxWidth: 480,
+      width: "100%",
+      overflow: "hidden",
+    },
+    flexRow: {
+      flexDirection: "row",
+      alignItems: "center",
+    },
+    flexColumn: {
+      flexDirection: "column",
+    },
+  });

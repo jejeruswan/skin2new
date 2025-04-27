@@ -3,7 +3,7 @@
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { SymbolWeight } from 'expo-symbols';
 import React from 'react';
-import { OpaqueColorValue, StyleProp, ViewStyle } from 'react-native';
+import { OpaqueColorValue, StyleProp, ViewStyle, Image, ImageStyle, ImageSourcePropType } from 'react-native';
 
 // Add your SFSymbol to MaterialIcons mappings here.
 const MAPPING = {
@@ -13,10 +13,15 @@ const MAPPING = {
   'paperplane.fill': 'send',
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',
+  'custom.search' : require('@/assets/images/search-icon.svg'),
+  'custom.star' : require('@/assets/images/star-icon.svg'),
+  'custom.home' : require('@/assets/images/home-icon.svg'),
+  'custom.bookmark' : require('@/assets/images/bookmark-icon.svg'),
+  'custom.account' : require('@/assets/images/account-icon.svg'),
 } as Partial<
   Record<
-    import('expo-symbols').SymbolViewProps['name'],
-    React.ComponentProps<typeof MaterialIcons>['name']
+    string,
+    React.ComponentProps<typeof MaterialIcons>['name'] | ImageSourcePropType
   >
 >;
 
@@ -39,5 +44,16 @@ export function IconSymbol({
   style?: StyleProp<ViewStyle>;
   weight?: SymbolWeight;
 }) {
-  return <MaterialIcons color={color} size={size} name={MAPPING[name]} style={style} />;
+  const IconSource = MAPPING[name];
+  if (name.startsWith('custom.')) {
+    return (
+      <Image 
+        source={IconSource as ImageSourcePropType}
+        style={[
+          { width: size, height: size },
+        ] as StyleProp<ImageStyle>}
+      />
+    );
+  }
+  return <MaterialIcons color={color} size={size} name={IconSource as any} style={style as any} />;
 }

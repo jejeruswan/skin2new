@@ -52,38 +52,38 @@ export default function TabLayout() {
         ),
       }}>
       <Tabs.Screen 
-        name="Gender" 
+        name="Search" 
         options={{
-          title: 'Gender',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.fill" color={color} />,
+          title: 'Search',
+          tabBarIcon: ({ color }) => <IconSymbol name="custom.search" size={24} color={color} />,
         }}
       />
       <Tabs.Screen 
         name="Routine" 
         options={{
           title: 'Routine',
-          tabBarIcon: ({ color }) => <Ionicons name="sparkles-outline" size={24} color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol name="custom.star" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol name="custom.home" size={24} color={color} />,
         }}
       />
       <Tabs.Screen 
         name="Saved" 
         options={{
           title: 'Saved',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="bookmark.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="custom.bookmark" color={color} />,
         }}
       />
       <Tabs.Screen 
-        name="AccountProfile" 
+        name="Welcome" 
         options={{
-          title: 'Profile',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.crop.circle.fill" color={color} />,
+          title: 'Welcome',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="custom.account" color={color} />,
         }}
       />
     </Tabs>

@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, ScrollView, StyleSheet } from "react-native";
-import { ProductCard } from "./ProductCard";
+import { ProductCard } from "@/components/ProductCardHome";
 import { ProductSectionProps } from "@/types/types";
 
 export const ProductSection = ({ title, products }: ProductSectionProps) => {

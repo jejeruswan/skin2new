@@ -1,70 +1,61 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { StatusBar } from "@/components/StatusBar";
 import { Header } from "@/components/Header";
-import { RoutineDescription } from "@/components/RoutineDescription";
-import { AddItemButton } from "@/components/AddItemButton";
-import { RoutineItemList } from "@/components/RoutineItemList";
+import { BottomNavigation } from "@/components/BottomNavigation";
+import { RoutineCard } from "@/components/RoutineCard";
+import { Colors } from "@/constants/Colors";
+import { useRouter } from 'expo-router';
 
-const RoutinePrototype: React.FC = () => {
+export const RoutineScreen = () => {
+  const routineSteps = [{label: "Cleanser", route: "/Cleansers"}, {label: "Exfoliator", route: "/exfoliator"}, {label: "Serum", route: "/serum"}, {label: "Moisturizer", route: "/moinsturizer"}, {label: "Sunscreen", route: "sunscreen"}];
+
   return (
     <View style={styles.container}>
-      <View style={styles.content}>
-        <View style={styles.header}>
-          <StatusBar/>
-          <Header/>
-          <RoutineDescription />
+      <StatusBar />
+      <ScrollView contentContainerStyle={styles.scroll}>
+        <Header />
+        <Text style={styles.title}>Your{"\n"}Routine</Text>
+        <Text style={styles.description}>
+          A skincare routine personalised just for you! Modify the routine as you see fit or click on a step to learn more.
+        </Text>
+
+        <View style={styles.cardsContainer}>
+          {routineSteps.map((step) => (
+            <RoutineCard key={step.label} label={step.label} />
+          ))}
         </View>
-        <View style={styles.buttonContainer}>
-          <AddItemButton />
-        </View>
-      </View>
-      <RoutineItemList />
-      <Image
-        source={{ uri: "https://cdn.builder.io/api/v1/image/assets/9ebead7fe6d840afa98c8d4eed64d9de/daf397dd414fd9c6b157cfb8e70f982f2388fc80?placeholderIfAbsent=true" }}
-        style={styles.footerImage}
-      />
+      </ScrollView>
+      <BottomNavigation />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 50,
-    display: "flex",
-    marginLeft: "auto",
-    marginRight: "auto",
-    maxWidth: 480,
-    width: "100%",
-    paddingTop: 22,
-    flexDirection: "column",
-    overflow: "hidden",
-    alignItems: "center",
+    flex: 1,
+    backgroundColor: Colors.light.background,
   },
-  content: {
-    display: "flex",
-    alignItems: "flex-start",
-    gap: 2,
+  scroll: {
+    paddingHorizontal: 20,
+    paddingBottom: 100,
   },
-  header: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "stretch",
-    flexGrow: 1,
-    flexShrink: 0,
-    flexBasis: 0,
+  title: {
+    fontSize: 42,
+    fontWeight: "bold",
+    color: "white",
+    marginTop: 20,
   },
-  buttonContainer: {
-    display: "flex",
-    alignItems: "flex-start",
-    gap: 2,
+  description: {
+    fontSize: 16,
+    color: "white",
+    marginTop: 10,
+    marginBottom: 24,
+    lineHeight: 22,
   },
-  footerImage: {
-    aspectRatio: 1,
-    width: "100%",
-    alignSelf: "stretch",
-    overflow: "hidden",
+  cardsContainer: {
+    gap: 14,
   },
 });
 
-export default RoutinePrototype;
+export default RoutineScreen;
