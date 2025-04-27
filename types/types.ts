@@ -47,3 +47,13 @@ export type RootStackParamList = {
     title: string;
     products: ProductCardProps[];
   }
+
+  export interface RoutineItemProps {
+    title: string;
+    imageUrl: string;
+  }
+  
+  export interface StatusBarIconProps {
+    uri: string;
+    width: number;
+  }

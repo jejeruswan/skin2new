@@ -58,22 +58,6 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.fill" color={color} />,
         }}
       />
-<<<<<<< HEAD
-      <Tabs.Screen 
-        name="Routine" 
-        options={{
-          title: 'Routine',
-          tabBarIcon: ({ focused }) => (
-            <CustomIcon 
-              name="search-icon.svg" 
-              size={28} 
-              color={focused ? activeColor : inactiveColor} 
-            />
-          ),
-        }}q
-      />
-=======
->>>>>>> e7ad0354e95b8816149b50cda449ac43fb65508e
       <Tabs.Screen
         name="index"
         options={{
