@@ -2,10 +2,8 @@ import React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { StatusBar } from "@/components/StatusBar";
 import { Header } from "@/components/Header";
-import { BottomNavigation } from "@/components/BottomNavigation";
 import { RoutineCard } from "@/components/RoutineCard";
 import { Colors } from "@/constants/Colors";
-import { useRouter } from 'expo-router';
 
 export const RoutineScreen = () => {
   const routineSteps = [{label: "Cleanser", route: "/Cleansers"}, {label: "Exfoliator", route: "/exfoliator"}, {label: "Serum", route: "/serum"}, {label: "Moisturizer", route: "/moinsturizer"}, {label: "Sunscreen", route: "sunscreen"}];
@@ -26,7 +24,6 @@ export const RoutineScreen = () => {
           ))}
         </View>
       </ScrollView>
-      <BottomNavigation />
     </View>
   );
 };

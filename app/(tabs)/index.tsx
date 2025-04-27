@@ -38,7 +38,6 @@ export const HomeScreen = () => {
           <ProductSection title="The Ordinary" products={ordinaryProducts} />
         </View>
       </ScrollView>
-      <BottomNavigation />
     </View>
   );
 };

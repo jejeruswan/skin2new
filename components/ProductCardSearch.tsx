@@ -1,38 +1,39 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
-import { colors, typography1 } from "@/constants/Theme";
 
 interface ProductCardProps {
   image: string;
   title: string;
-  tags: string[];
+  type: string;
+  size: string;
+  category: string;
   hasRating?: boolean;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({
+export const ProductCard = ({
   image,
   title,
-  tags,
+  type,
+  size,
+  category,
   hasRating = false,
-}) => {
+}: ProductCardProps) => {
   return (
     <View style={styles.container}>
       <Image source={{ uri: image }} style={styles.productImage} />
-      <View style={styles.content}>
+      <View style={styles.contentContainer}>
         <View style={styles.titleContainer}>
           <Text style={styles.title} numberOfLines={2}>
             {title}
           </Text>
           {hasRating && (
-            <Image source={{ uri: "https://cdn.builder.io/api/v1/image/assets/9ebead7fe6d840afa98c8d4eed64d9de/2f5cb1eaea4ef05efc9208ebdfdc77a0a1fc105d?placeholderIfAbsent=true" }} style={styles.ratingImage} />
+            <Image source={{ uri: "https://cdn.builder.io/api/v1/image/assets/9ebead7fe6d840afa98c8d4eed64d9de/2f5cb1eaea4ef05efc9208ebdfdc77a0a1fc105d?placeholderIfAbsent=true" }} style={styles.ratingIcon} />
           )}
         </View>
         <View style={styles.tagsContainer}>
-          {tags.map((tag, index) => (
-            <View key={index} style={styles.tag}>
-              <Text style={styles.tagText}>{tag}</Text>
-            </View>
-          ))}
+          <Text style={styles.tag}>{type}</Text>
+          <Text style={styles.tag}>{size}</Text>
+          <Text style={styles.tag}>{category}</Text>
         </View>
       </View>
     </View>
@@ -41,22 +42,20 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 20,
+    backgroundColor: "#E6E7FA",
+    borderRadius: 22,
+    paddingVertical: 16,
+    paddingHorizontal: 20,
     flexDirection: "row",
-    alignItems: "stretch",
-    gap: 11,
-    overflow: "hidden",
-    height: 120,
-    padding: 12,
-    maxWidth: 400,
-    width: "100%",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   productImage: {
     width: 103,
     height: 103,
     resizeMode: "contain",
   },
-  content: {
+  contentContainer: {
     flex: 1,
     marginTop: 8,
   },
@@ -67,31 +66,28 @@ const styles = StyleSheet.create({
   },
   title: {
     flex: 1,
-    color: colors.textPrimary,
+    color: "rgba(107, 118, 152, 1)",
     fontSize: 15,
+    fontFamily: "Poppins",
     fontWeight: "500",
     lineHeight: 16,
     letterSpacing: -0.3,
-    fontFamily: typography1.poppins,
   },
-  ratingImage: {
+  ratingIcon: {
     width: 44,
     height: 44,
     marginTop: 31,
   },
   tagsContainer: {
     flexDirection: "row",
-    marginTop: 5,
+    marginTop: 16,
     gap: 9,
   },
   tag: {
-    flex: 1,
-  },
-  tagText: {
     fontSize: 11,
-    color: colors.textSecondary,
+    color: "rgba(142, 157, 204, 1)",
+    fontFamily: "Poppins",
     fontWeight: "300",
     letterSpacing: -0.61,
-    fontFamily: typography1.poppins,
   },
 });

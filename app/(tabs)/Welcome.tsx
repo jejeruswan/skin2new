@@ -1,7 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet, useColorScheme } from "react-native";
 import { OptionButton } from "@/components/OptionButton";
-import { colors, typography, spacing, layout } from "@/constants/Theme";
+import { StatusBar } from "@/components/StatusBar";
+import { typography, spacing, layout } from "@/constants/Theme";
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/types';
@@ -14,6 +15,7 @@ export default function WelcomeScreen () {
   const navigation = useNavigation<NavigationProp>();
   return (
   <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
+    <StatusBar/>
     <Text style={styles.title}>
         Welcome to Skin2Care! Ready to start your clear skin arc?
       </Text>
@@ -31,10 +33,7 @@ export default function WelcomeScreen () {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    paddingHorizontal: layout.padding,
-    width: "100%",
-    maxWidth: layout.maxWidth,
+    backgroundColor: Colors.light.background,
   },
   title: {
     ...typography.heading,
