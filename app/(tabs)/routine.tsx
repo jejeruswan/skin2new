@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
     paddingBottom: 100,
   },
   title: {
-    font:"Poppins-Bold",
     fontSize: 42,
     fontWeight: "bold",
     color: "white",
