@@ -7,6 +7,8 @@ import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/types';
 import { Colors } from '@/constants/Colors';
+import Animated from 'react-native-reanimated'
+import * as trans from 'react-native-reanimated';
 
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Gender'>;
@@ -29,18 +31,18 @@ export default function GenderScreen () {
   return (
     <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
       <QuestionHeader
-        questionNumber="QUESTION 2"
-        question="What gender do you identify as?"
-      />
-      <View style={styles.optionsContainer}>
-        {genderOptions.map((option) => (
-          <OptionButton
-            key={option}
-            label={option}
-            onPress={() => handleSelect(option)}
-          />
-        ))}
-      </View>
+          questionNumber="QUESTION 2"
+          question="What gender do you identify as?"
+        />
+        <View style={styles.optionsContainer}>
+          {genderOptions.map((option) => (
+            <OptionButton
+              key={option}
+              label={option}
+              onPress={() => handleSelect(option)}
+            />
+          ))}
+        </View>
     </View>
   );
 };

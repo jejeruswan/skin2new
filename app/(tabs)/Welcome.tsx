@@ -7,6 +7,8 @@ import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/types';
 import { Colors } from '@/constants/Colors';
+import Animated from 'react-native-reanimated'
+import * as t from 'react-native-reanimated';
 
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Welcome'>;
@@ -16,16 +18,16 @@ export default function WelcomeScreen () {
   return (
   <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
     <StatusBar/>
-    <Text style={styles.title}>
+    <Animated.Text style={styles.title} entering={t.SlideInRight} exiting={t.SlideOutLeft}>
         Welcome to Skin2Care! Ready to start your clear skin arc?
-      </Text>
-      <View style={styles.buttonContainer}>
+      </Animated.Text>
+      <Animated.View style={styles.buttonContainer} entering={t.SlideInRight} exiting={t.SlideOutLeft}>
         <OptionButton
           label="Let's Go!"
           onPress={() => navigation.navigate('NameInput')}
           style={styles.button}
         />
-      </View>
+      </Animated.View>
     </View>
   );
 };
@@ -33,6 +35,7 @@ export default function WelcomeScreen () {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: "center",
     backgroundColor: Colors.light.background,
   },
   title: {
