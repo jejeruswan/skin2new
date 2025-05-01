@@ -1,6 +1,9 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 import { colors } from "@/constants/Theme";
+import { createAnimatedComponent } from "react-native-reanimated/lib/typescript/createAnimatedComponent";
+import Animated from 'react-native-reanimated'
+import * as t from 'react-native-reanimated';
 
 interface OptionButtonProps {
   label: string;
@@ -14,11 +17,13 @@ export const OptionButton: React.FC<OptionButtonProps> = ({
   style,
 }) => {
   return (
-    <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
+    <AnimatedTouchableOpacity style={[styles.button, style]} onPress={onPress} entering={t.SlideInRight} exiting={t.SlideOutLeft}>
       <Text style={styles.buttonText}>{label}</Text>
-    </TouchableOpacity>
+    </AnimatedTouchableOpacity>
   );
 };
+
+const AnimatedTouchableOpacity = Animated.createAnimatedComponent(TouchableOpacity)
 
 const styles = StyleSheet.create({
   button: {
