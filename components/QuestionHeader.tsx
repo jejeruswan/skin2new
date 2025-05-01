@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { colors, typography } from "@/constants/Theme";
+import Animated from 'react-native-reanimated'
+import * as t from 'react-native-reanimated';
 
 interface QuestionHeaderProps {
   questionNumber: string;
@@ -13,8 +15,8 @@ export const QuestionHeader: React.FC<QuestionHeaderProps> = ({
 }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.questionNumber}>{questionNumber}</Text>
-      <Text style={styles.question}>{question}</Text>
+      <Animated.Text style={styles.questionNumber} entering={t.SlideInRight} exiting={t.SlideOutLeft}>{questionNumber}</Animated.Text>
+      <Animated.Text style={styles.question} entering={t.SlideInRight} exiting={t.SlideOutLeft}>{question}</Animated.Text>
     </View>
   );
 };

@@ -7,6 +7,8 @@ import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/types/types';
 import { Colors } from '@/constants/Colors'
+import Animated from 'react-native-reanimated'
+import * as t from 'react-native-reanimated';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'XpLevel'>;
 type RouteProps = RouteProp<RootStackParamList, 'XpLevel'>;
@@ -31,7 +33,7 @@ export default function XpLevelScreen () {
         questionNumber="QUESTION 3"
         question="What do you know about skincare?"
       />
-      <View style={styles.optionsContainer}>
+      <Animated.View style={styles.optionsContainer} entering={t.SlideInRight} exiting={t.SlideOutLeft}>
         {xpOptions.map((option) => (
           <OptionButton
             key={option}
@@ -39,7 +41,7 @@ export default function XpLevelScreen () {
             onPress={() => handleSelect(option)}
           />
         ))}
-      </View>
+      </Animated.View>
     </View>
   );
 };

@@ -7,6 +7,8 @@ import React, { useState } from "react";
  import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
  import { RootStackParamList } from '@/types/types';
  import { Colors } from '@/constants/Colors';
+ import Animated from 'react-native-reanimated'
+ import * as t from 'react-native-reanimated';
  
  type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Welcome'>;
  
@@ -15,8 +17,8 @@ import React, { useState } from "react";
    const [name, setName] = useState("");
  
    return (
-   <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>      
-     <QuestionHeader
+   <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>   
+      <QuestionHeader
            questionNumber="QUESTION 1"
            question="What is your name?"
          />
@@ -28,14 +30,14 @@ import React, { useState } from "react";
            placeholderTextColor={colors.text}
            selectionColor={colors.text}
          />
-         <View style={styles.buttonContainer}>
+         <Animated.View style={styles.buttonContainer} entering={t.SlideInRight} exiting={t.SlideOutLeft}>
            <OptionButton
              label="→"
              onPress={() => navigation.navigate('Gender', { name })
              }
              style={styles.button}
            />
-         </View>
+         </Animated.View>
        </View>
      );
    };
