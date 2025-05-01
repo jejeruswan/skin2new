@@ -46,9 +46,8 @@ export default function ActIngrPrefScreen () {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: layout.padding,
-    width: "100%",
-    maxWidth: layout.maxWidth,
+    flex: 1,
+    backgroundColor: Colors.light.background,
   },
   optionsContainer: {
     gap: 9,

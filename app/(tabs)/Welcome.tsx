@@ -35,19 +35,18 @@ export default function WelcomeScreen () {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
     backgroundColor: Colors.light.background,
   },
   title: {
     ...typography.heading,
-    marginTop: spacing.xlarge,
+    marginTop:300,
   },
   buttonContainer: {
     width: "100%",
     alignItems: "center",
   },
   button: {
-    width: 241,
+    width: 220,
     height: 67,
   },
 });

@@ -14,8 +14,7 @@ export const colors = {
   
   export const typography = {
     heading: {
-      fontFamily: "Poppins",
-      fontWeight: "500" as const,
+      fontFamily: "Poppins-Bold",
       fontSize: 46,
       lineHeight: 42.5,
       letterSpacing: -2.5,
@@ -23,7 +22,7 @@ export const colors = {
     },
     subheading: {
       fontSize: 14,
-      fontFamily: "Poppins",
+      fontFamily: "Poppins-Medium",
       fontWeight: "500" as const,
       letterSpacing: 1,
       color: colors.text,
