@@ -14,7 +14,7 @@ type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Welcome'>;
 export default function WelcomeScreen () {
   const navigation = useNavigation<NavigationProp>();
   return (
-  <View style={[styles.container, { backgroundColor: Colors['light'].background }]}>
+  <View style={styles.container}>
     <StatusBar/>
     <Text style={styles.title}>
         Welcome to Skin2Care! Ready to start your clear skin arc?
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   title: {
     ...typography.heading,
-    marginBottom: spacing.xlarge,
+    marginTop: spacing.xlarge,
   },
   buttonContainer: {
     width: "100%",

@@ -80,9 +80,9 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen 
-        name="Welcome" 
+        name="Account" 
         options={{
-          title: 'Welcome',
+          title: 'Account',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="custom.account" color={color} />,
         }}
       />

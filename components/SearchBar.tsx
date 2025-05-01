@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 8,
     flex: 1,
+    color: "#FFFFFF",
   },
   searchIcon: {
     width: 25,
