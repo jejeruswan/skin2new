@@ -38,6 +38,7 @@ export default function RootLayout() {
           headerShown: false,
         }}>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="Cleansers" />
           <Stack.Screen name="+not-found" />
         </Stack>
         <StatusBar style="light" />

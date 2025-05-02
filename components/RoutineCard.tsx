@@ -1,11 +1,40 @@
-import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { Entypo, Feather } from "@expo/vector-icons";
-import { Colors } from "@/constants/Colors";
+// components/RoutineCard.tsx
 
-export const RoutineCard = ({ label }: { label: string }) => {
+import React from "react";
+import {
+  TouchableOpacity,
+  View,
+  Text,
+  StyleSheet,
+  StyleProp,
+  ViewStyle,
+  TouchableOpacityProps,
+} from "react-native";
+import { Entypo, Feather } from "@expo/vector-icons";
+
+export type RoutineCardProps = {
+  label: string;
+  /** called on tap */
+  onPress?: () => void;
+  /** called on long-press (for drag/drop later) */
+  onLongPress?: () => void;
+  style?: StyleProp<ViewStyle>;
+} & Pick<TouchableOpacityProps, "activeOpacity">;  // optionally accept activeOpacity
+
+export const RoutineCard: React.FC<RoutineCardProps> = ({
+  label,
+  onPress,
+  onLongPress,
+  style,
+  activeOpacity = 0.7,
+}) => {
   return (
-    <TouchableOpacity style={styles.card}>
+    <TouchableOpacity
+      style={[styles.card, style]}
+      onPress={onPress}
+      onLongPress={onLongPress}
+      activeOpacity={activeOpacity}
+    >
       <View style={styles.left}>
         <Entypo name="dots-three-vertical" size={18} color="#6B7698" />
         <Text style={styles.label}>{label}</Text>
