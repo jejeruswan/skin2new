@@ -4,7 +4,6 @@ import { StatusBar } from "@/components/StatusBar";
 import { Header } from "@/components/Header";
 import { FeaturedBanner } from "@/components/FeaturedBanner";
 import { ProductSection } from "@/components/ProductSection";
-import { BottomNavigation } from "@/components/BottomNavigation";
 
 export const HomeScreen = () => {
   const ceraVeProducts = [

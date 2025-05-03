@@ -14,7 +14,7 @@ export const colors = {
   
   export const typography = {
     heading: {
-      fontFamily: "Poppins-Bold",
+      fontFamily: "Poppins-Medium",
       fontSize: 46,
       lineHeight: 42.5,
       letterSpacing: -2.5,
@@ -23,7 +23,7 @@ export const colors = {
     subheading: {
       fontSize: 14,
       fontFamily: "Poppins-Medium",
-      fontWeight: "500" as const,
+      fontWeight: "400" as const,
       letterSpacing: 1,
       color: colors.text,
     },
@@ -49,8 +49,8 @@ export const colors = {
   };
   
   export const layout = {
-    maxWidth: 390,
-    padding: 20,
+    maxWidth: 1000,
+    padding: 30,
   };
   
   export const commonStyles = StyleSheet.create({

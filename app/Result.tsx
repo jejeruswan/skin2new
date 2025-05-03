@@ -18,7 +18,7 @@ export default function ResultScreen () {
   const { name, gender, xpLevel, assistLevel, skinConcerns, knowSkin, skinType, skinFeel, dryExp, skinProd, allergies, skinGoals, skinPref, pricePref, ingrPref, actIngrPref } = route.params;
   const router = useRouter();
   const onComplete = () => {
-    router.push('/(tabs)/Routine');
+    router.push('/(tabs)/routine');
   };
   
   return (

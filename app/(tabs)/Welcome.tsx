@@ -39,11 +39,13 @@ const styles = StyleSheet.create({
   },
   title: {
     ...typography.heading,
-    marginTop:300,
+    marginTop:240,
+    padding: 30
   },
   buttonContainer: {
     width: "100%",
-    alignItems: "center",
+    padding: 30,
+    alignItems: "flex-start",
   },
   button: {
     width: 220,
