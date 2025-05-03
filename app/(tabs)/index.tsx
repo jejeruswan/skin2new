@@ -7,21 +7,30 @@ import { ProductSection } from "@/components/ProductSection";
 
 export const HomeScreen = () => {
   const ceraVeProducts = [
+    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
+    { image: require("@/assets/images/joseonsunscreen.webp"), title: "The Ordinary Glucoside F..." },
     { image: require("@/assets/images/cerave.png"), title: "The Ordinary Glucoside F..." },
-    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Glucoside F..." },
-    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Glucoside F..." },
+    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
+    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
+    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
   ];
 
   const curelProducts = [
     { image: require("@/assets/images/cerave.png"), title: "The Ordinary Glucoside F..." },
     { image: require("@/assets/images/cerave.png"), title: "The Ordinary Glucoside F..." },
     { image: require("@/assets/images/cerave.png"), title: "The Ordinary Glucoside F..." },
+    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
+    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
+    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
   ];
 
   const ordinaryProducts = [
     { image: require("@/assets/images/cerave.png"), title: "The Ordinary Glucoside F..." },
     { image: require("@/assets/images/cerave.png"), title: "The Ordinary Glucoside F..." },
     { image: require("@/assets/images/cerave.png"), title: "The Ordinary Glucoside F..." },
+    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
+    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
+    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
   ];
 
   return (
