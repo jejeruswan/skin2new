@@ -16,21 +16,21 @@ export const HomeScreen = () => {
   ];
 
   const curelProducts = [
-    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Glucoside F..." },
-    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Glucoside F..." },
-    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Glucoside F..." },
-    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
-    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
-    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
+    { image: require("@/assets/images/curel.jpg"), title: "The Ordinary Glucoside F..." },
+    { image: require("@/assets/images/curel.jpg"), title: "The Ordinary Glucoside F..." },
+    { image: require("@/assets/images/curel.jpg"), title: "The Ordinary Glucoside F..." },
+    { image: require("@/assets/images/curel.jpg"), title: "The Ordinary Cleanser" },
+    { image: require("@/assets/images/curel.jpg"), title: "The Ordinary Cleanser" },
+    { image: require("@/assets/images/curel.jpg"), title: "The Ordinary Cleanser" },
   ];
 
   const ordinaryProducts = [
-    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Glucoside F..." },
-    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Glucoside F..." },
-    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Glucoside F..." },
-    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
-    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
-    { image: require("@/assets/images/cerave.png"), title: "The Ordinary Cleanser" },
+    { image: require("@/assets/images/ord.jpg"), title: "The Ordinary Glucoside F..." },
+    { image: require("@/assets/images/ord.jpg"), title: "The Ordinary Glucoside F..." },
+    { image: require("@/assets/images/ord.jpg"), title: "The Ordinary Glucoside F..." },
+    { image: require("@/assets/images/ord.jpg"), title: "The Ordinary Cleanser" },
+    { image: require("@/assets/images/ord.jpg"), title: "The Ordinary Cleanser" },
+    { image: require("@/assets/images/ord.jpg"), title: "The Ordinary Cleanser" },
   ];
 
   return (

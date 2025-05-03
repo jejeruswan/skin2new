@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
   image: {
     width: 170,
     height: 148,
+    objectFit: "fill",
     position: "absolute",
     left: -27,
     top: -44,
