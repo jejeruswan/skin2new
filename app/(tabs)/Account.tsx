@@ -13,7 +13,8 @@ export const AccountScreen = () => {
       <StatusBar />
       <ScrollView contentContainerStyle={styles.scroll}>
         <Header />
-        <Text style={styles.title}>Hello,Jesslyn</Text>
+        <Text style={styles.title}>Hello, Jesslyn{"\n"}</Text>
+        
         <View style={styles.cardsContainer}>
           {AccountSteps.map((step) => (
             <AccountCard key={step.label} label={step.label} />

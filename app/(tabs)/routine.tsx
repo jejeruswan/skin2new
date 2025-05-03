@@ -29,7 +29,6 @@ export const RoutineScreen = () => {
 
   const handleReorder = (newItems: RoutineItem[]) => {
     setRoutineSteps(newItems);
-    // No need to save since you want it to reset on navigation
   };
 
   return (
