@@ -1,14 +1,7 @@
 // app/Cleansers/index.tsx
 
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
@@ -23,17 +16,17 @@ export default function CleansersScreen() {
   const products = [
     {
       image: require("@/assets/images/cerave.png"),
-      name:  "The Ordinary Glucoside Foaming Cleanser, Gentle Foaming Face Wa...",
+      name:  "The Ordinary Glucoside Foaming Cleanser, Gentle Foaming Face Wash",
       tags:  "Foam   5 Fl Oz   Cleanser",
     },
     {
       image: require("@/assets/images/cerave.png"),
-      name:  "Curel Japanese Skin Care Foaming Daily Face Wash for Sensitive Skin, Hyd...",
+      name:  "Curel Japanese Skin Care Foaming Daily Face Wash for Sensitive Skin.",
       tags:  "Foam   5 Fl Oz   Cleanser",
     },
     {
       image: require("@/assets/images/cerave.png"),
-      name:  "CeraVe Foaming Facial Cleanser, Daily Face Wash for Oily Skin with Hyal...",
+      name:  "CeraVe Foaming Facial Cleanser, Daily Face Wash for Oily Skin with Hyaluronic Acid",
       tags:  "Foam   5 Fl Oz   Cleanser",
     },
   ];
@@ -60,10 +53,7 @@ export default function CleansersScreen() {
             <TouchableOpacity
               key={idx}
               activeOpacity={0.7}
-              onPress={() => {
-                // when you implement a detail page, swap "Cleansers" for e.g. `Cleansers/${idx}`
-                //router.push("Cleansers");
-              }}
+              onPress={() => router.push("/ProductRecs")}
             >
               <View style={styles.card}>
                 <Image source={product.image} style={styles.image} />

@@ -1,23 +1,36 @@
-import React from "react";
+// app/(tabs)/routine.tsx
+
+import React, { useState } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
 
 import { StatusBar } from "@/components/StatusBar";
 import { Header } from "@/components/Header";
-import { RoutineCard } from "@/components/RoutineCard";
+import { DraggableRoutineList } from "@/components/DraggableRoutineList";
 import { Colors } from "@/constants/Colors";
-import { layout, spacing, typography } from "@/constants/Theme";
+import { typography } from "@/constants/Theme";
 
-const routineSteps = [
-  { label: "Cleanser" },
-  { label: "Exfoliator" },
-  { label: "Serum" },
-  { label: "Moisturizer" },
-  { label: "Sunscreen" },
-];
+type RoutineItem = {
+  id: string;
+  label: string;
+  onPress?: () => void;
+};
 
 export const RoutineScreen = () => {
   const router = useRouter();
+  
+  const [routineSteps, setRoutineSteps] = useState<RoutineItem[]>([
+    { id: "1", label: "Cleanser", onPress: () => router.push("/Cleansers") },
+    { id: "2", label: "Exfoliator" },
+    { id: "3", label: "Serum" },
+    { id: "4", label: "Moisturizer" },
+    { id: "5", label: "Sunscreen" },
+  ]);
+
+  const handleReorder = (newItems: RoutineItem[]) => {
+    setRoutineSteps(newItems);
+    // No need to save since you want it to reset on navigation
+  };
 
   return (
     <View style={styles.container}>
@@ -30,31 +43,24 @@ export const RoutineScreen = () => {
           see fit or click on a step to learn more.
         </Text>
 
-        <View style={styles.cardsContainer}>
-          {routineSteps.map((step) => {
-            if (step.label === "Cleanser") {
-              return (
-                <RoutineCard
-                  key={step.label}
-                  label="Cleanser"
-                  onPress={() => router.push("/Cleansers")}
-                />
-              );
-            }
-            return <RoutineCard key={step.label} label={step.label} />;
-          })}
-        </View>
+        <DraggableRoutineList 
+          items={routineSteps}
+          onReorder={handleReorder}
+        />
       </ScrollView>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container:     { flex: 1, backgroundColor: Colors.light.background },
-  scroll:        { paddingHorizontal: 20, paddingBottom: 100 },
-  title:         {fontFamily: "Poppins", fontSize: 58, lineHeight: 60, fontWeight: "600", color: "rgba(246, 246, 245, 1)", marginTop: 20 },
-  description:   { fontSize: 16, color: "white", marginTop: 10, marginBottom: 24, lineHeight: 22 },
-  cardsContainer:{ gap: 14 },
+  container:
+    { flex: 1, backgroundColor: Colors.light.background },
+  scroll:
+    { paddingHorizontal: 20, paddingBottom: 100 },
+  title:
+    { fontSize: 58, lineHeight: 60, fontWeight: "600", color: "rgba(246, 246, 245, 1)", marginTop: 20 },
+  description:
+    { fontSize: 16, color: "white", marginTop: 10, marginBottom: 24, lineHeight: 22 },
 });
 
 export default RoutineScreen;
