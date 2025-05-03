@@ -19,19 +19,21 @@ export const ProductCard = ({ image, title }: ProductCardProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: 121,
+    width: 120,
     height: 128,
     backgroundColor: "#EFF0FF",
+    overflow: "hidden",
     borderRadius: 17,
     position: "relative",
   },
   image: {
     width: 170,
-    height: 148,
+    height: 100,
     objectFit: "fill",
-    position: "absolute",
+    resizeMode: "cover",
+    justifyContent: "center",
     left: -27,
-    top: -44,
+    top: -2,
     shadowColor: "#8E9DCC",
     shadowOffset: {
       width: -1,
@@ -42,10 +44,10 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   title: {
-    position: "absolute",
     bottom: 6,
     left: 3,
     fontSize: 10,
     color: "#6B7698",
+    position: "absolute"
   },
 });
