@@ -59,9 +59,9 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen 
-        name="Routine" 
+        name="routine" 
         options={{
-          title: 'Routine',
+          title: 'routine',
           tabBarIcon: ({ color }) => <IconSymbol name="custom.star" size={24} color={color} />,
         }}
       />
