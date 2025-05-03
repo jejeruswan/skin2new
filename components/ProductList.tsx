@@ -45,7 +45,7 @@ export const ProductList = () => {
           key={product.id}
           name={product.name}
           price={product.price}
-          // image={product.image}
+          image={product.image}
           onPress={() => {
             // Navigate to product details or handle press
             console.log(`Pressed ${product.name}`);

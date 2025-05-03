@@ -12,7 +12,7 @@ export const Cart = () => {
           <ScrollView contentContainerStyle={styles.scroll}>
             <Header />
             <Text style={styles.title}>Saved{"\n"}Products</Text>
-            <ProductList />
+            <ProductList/>
           </ScrollView>
     </View>
   );
