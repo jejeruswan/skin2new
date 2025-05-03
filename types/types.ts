@@ -57,3 +57,15 @@ export type RootStackParamList = {
     uri: string;
     width: number;
   }
+
+  export interface Message {
+    id: string;
+    text: string;
+    sender: 'user' | 'bot';
+    timestamp: Date;
+  }
+  
+  export interface ChatResponse {
+    message: string;
+    suggestions?: string[];
+  }
