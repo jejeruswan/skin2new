@@ -1,93 +1,71 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { TouchableOpacity, View, Text, Image, StyleSheet } from "react-native";
+import { Feather } from "@expo/vector-icons";
 
-interface ProductCardProps {
-  image: string;
-  title: string;
-  type: string;
-  size: string;
-  category: string;
-  hasRating?: boolean;
-}
+type ProductCardProps = {
+  name: string;
+  price: string;
+  image?: any; // For require() images
+  imageUrl?: string; // For network images
+  onPress?: () => void;
+};
 
-export const ProductCard = ({
+export const ProductCard: React.FC<ProductCardProps> = ({
+  name,
+  price,
   image,
-  title,
-  type,
-  size,
-  category,
-  hasRating = false,
-}: ProductCardProps) => {
+  imageUrl,
+  onPress,
+}) => {
   return (
-    <View style={styles.container}>
-      <Image source={{ uri: image }} style={styles.productImage} />
-      <View style={styles.contentContainer}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title} numberOfLines={2}>
-            {title}
-          </Text>
-          {hasRating && (
-            <Image source={{ uri: "https://cdn.builder.io/api/v1/image/assets/9ebead7fe6d840afa98c8d4eed64d9de/2f5cb1eaea4ef05efc9208ebdfdc77a0a1fc105d?placeholderIfAbsent=true" }} style={styles.ratingIcon} />
-          )}
-        </View>
-        <View style={styles.tagsContainer}>
-          <Text style={styles.tag}>{type}</Text>
-          <Text style={styles.tag}>{size}</Text>
-          <Text style={styles.tag}>{category}</Text>
+    <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.7}>
+      <View style={styles.content}>
+        {image && <Image source={image} style={styles.image} />}
+        {imageUrl && <Image source={{ uri: imageUrl }} style={styles.image} />}
+        <View style={styles.info}>
+          <Text style={styles.name} numberOfLines={2}>{name}</Text>
+          <Text style={styles.price}>{price}</Text>
         </View>
       </View>
-    </View>
+      <Feather name="chevron-right" size={22} color="#6B7698" />
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  card: {
     backgroundColor: "#E6E7FA",
     borderRadius: 22,
-    paddingVertical: 16,
-    paddingHorizontal: 20,
+    padding: 16,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
   },
-  productImage: {
-    width: 103,
-    height: 103,
-    resizeMode: "contain",
-  },
-  contentContainer: {
-    flex: 1,
-    marginTop: 8,
-  },
-  titleContainer: {
+  content: {
     flexDirection: "row",
-    alignItems: "flex-start",
-    gap: 17,
-  },
-  title: {
+    alignItems: "center",
     flex: 1,
-    color: "rgba(107, 118, 152, 1)",
-    fontSize: 15,
-    fontFamily: "Poppins",
+    marginRight: 12,
+  },
+  image: {
+    width: 60,
+    height: 60,
+    borderRadius: 12,
+    marginRight: 16,
+    backgroundColor: "#D1D5E4",
+  },
+  info: {
+    flex: 1,
+  },
+  name: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#6B7698",
+    marginBottom: 4,
+  },
+  price: {
+    fontSize: 14,
+    color: "#8E95B2",
     fontWeight: "500",
-    lineHeight: 16,
-    letterSpacing: -0.3,
-  },
-  ratingIcon: {
-    width: 44,
-    height: 44,
-    marginTop: 31,
-  },
-  tagsContainer: {
-    flexDirection: "row",
-    marginTop: 16,
-    gap: 9,
-  },
-  tag: {
-    fontSize: 11,
-    color: "rgba(142, 157, 204, 1)",
-    fontFamily: "Poppins",
-    fontWeight: "300",
-    letterSpacing: -0.61,
   },
 });
